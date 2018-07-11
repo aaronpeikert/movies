@@ -17,7 +17,7 @@ knitr::read_chunk(here("scripts", "load.R"))
 movies_2004 <- read.csv2(here("data", "2004.csv"), sep=",")
 names(movies_2004)
 ggplot(movies_2004, aes(rating, budget)) +
-  geom_point() 
+  geom_point(colour="red") 
 
 
 ```
