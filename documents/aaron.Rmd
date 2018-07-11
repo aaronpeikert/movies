@@ -1,0 +1,25 @@
+---
+title: "Aaron"
+author: "Aaron Peikert"
+date: "7/11/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(here)
+library(tidyverse)
+knitr::opts_chunk$set(echo = TRUE)
+knitr::read_chunk(here("scripts", "load.R"))
+```
+
+```{r load}
+```
+
+```{r}
+movies %>%
+  filter(!is.na(budget)) %>%
+  ggplot(aes(budget, rating)) +
+  geom_point() +
+  NULL
+```
+
