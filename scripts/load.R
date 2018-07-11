@@ -1,6 +1,10 @@
 library(tidyverse)
 library(here)
 #----load----
-movies2004 <- read_csv(here("data", "2004.csv"))
-movies2005 <- read_csv(here("data", "2005.csv"))
-movies <- rbind(movies2004, movies2004)
+whats_here <- function(dir){
+  paths <- here::here(dir, list.files(here(dir)))
+  names(paths) <- dir %>% here() %>% list.files() %>% str_split("\\.") %>% map_chr(1)
+  return(paths)
+}
+specs <- spec_csv(here("data", "2000.csv"))
+movies <- whats_here("data") %>% map_dfr(read_csv, col_types = specs)
