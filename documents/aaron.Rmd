@@ -20,6 +20,7 @@ movies %>%
   filter(!is.na(budget)) %>%
   ggplot(aes(budget, rating)) +
   geom_point() +
+  xlab("$")
   NULL
 ```
 
