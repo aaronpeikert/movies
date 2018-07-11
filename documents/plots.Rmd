@@ -15,12 +15,24 @@ knitr::read_chunk(here("scripts", "load.R"))
 ```{r load}
 ```
 
-```{r}
+```{r aaron}
 movies %>%
   filter(!is.na(budget)) %>%
   ggplot(aes(budget, rating)) +
   geom_point() +
   xlab("$")
+  NULL
+```
+
+```{r aniko}
+ggplot(movies, aes(rating, budget)) +
+  geom_point() 
+```
+
+```{r lena}
+ggplot(movies, aes(x = length, y = rating)) +
+  geom_point() + 
+  scale_x_continuous(limits = c(50, 300))  + 
   NULL
 ```
 
