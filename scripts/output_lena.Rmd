@@ -1,0 +1,35 @@
+---
+title: "lenasmd"
+author: "Lena Roemer"
+date: "11 Juli 2018"
+output: html_document
+---
+
+
+## R Markdown
+
+This is Lenas File. 
+Isn't is beautiful? 
+```{r }
+library(tidyverse)
+library(here)
+library(ggplot2)
+
+knitr::read_chunk(here("scripts", "load.R"))
+
+```
+
+
+```{r load}
+```
+
+the next chunk should be named as the file"chunk", but be entirely empty `knitr::read_chunk(here("scripts", "load.R"))`lets you use the code and displays the code of other scripts 
+
+```{r}
+ggplot(movies, aes(x = length, y = rating)) +
+  geom_point() + 
+  scale_x_continuous(limits = c(50, 300))  + 
+  NULL
+                    
+```
+
